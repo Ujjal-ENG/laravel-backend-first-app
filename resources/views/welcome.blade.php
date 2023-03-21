@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ujjal Kumar Roy</title>
-</head>
-<body>
-    <h1>Ujjal Laravel Kopa</h1>
-</body>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Laravel 10 vite with react</title>
+
+        @viteReactRefresh
+        @vite('resources/js/app.jsx')
+        @vite('resources/css/app.css')
+    </head>
+    <body>
+        <div id="app">
+         
+        </div>
+    </body>
 </html>
