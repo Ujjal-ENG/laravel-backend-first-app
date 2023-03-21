@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import ContactUs from "./pages/ContactUs";
 import Home from "./pages/Home";
 import Create from "./pages/Create";
+import Edit from "./pages/Edit";
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/create" element={<Create />} />
                 <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/edit" element={<Edit />} />
             </Routes>
         </div>
     );

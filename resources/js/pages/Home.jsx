@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import http from "../http/http";
 import Table from "react-bootstrap/Table";
 import Alert from "react-bootstrap/Alert";
+import { Link } from "react-router-dom";
 const Home = () => {
     const [user, setUser] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +42,11 @@ const Home = () => {
                                 <td>{id}</td>
                                 <td>{name}</td>
                                 <td>{email}</td>
-                                <td>Buttons</td>
+                                <td>
+                                    <Link to="/edit" state={el}>
+                                        edit
+                                    </Link>
+                                </td>
                             </tr>
                         );
                     })}
