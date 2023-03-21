@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/kopa', function () {
     return view('Kopa');
 });
+Route::get('/product', function () {
+    return view('.products.add.Product');
+});
