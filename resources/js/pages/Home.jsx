@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import http from "../http/http";
 import Table from "react-bootstrap/Table";
-
+import Alert from "react-bootstrap/Alert";
 const Home = () => {
     const [user, setUser] = useState([]);
-
+    const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
         fetchUser();
     }, []);
 
     const fetchUser = async () => {
+        setIsLoading(true);
         const fetchData = await http.get("/users");
 
         setUser(fetchData.data);
+        setIsLoading(false);
     };
     return (
         <div>
@@ -25,9 +27,15 @@ const Home = () => {
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {user &&
-                        user.map((el) => {
+                {isLoading ? (
+                    <div>
+                        <Alert key="danger" variant="danger">
+                            Data is Loading ....
+                        </Alert>
+                    </div>
+                ) : (
+                    <tbody>
+                        {user.map((el) => {
                             const { email, name, id } = el;
                             return (
                                 <tr key={id}>
@@ -38,7 +46,8 @@ const Home = () => {
                                 </tr>
                             );
                         })}
-                </tbody>
+                    </tbody>
+                )}
             </Table>
         </div>
     );
