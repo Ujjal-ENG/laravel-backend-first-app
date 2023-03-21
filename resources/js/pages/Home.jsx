@@ -17,7 +17,12 @@ const Home = () => {
         setIsLoading(false);
     };
     return (
-        <div>
+        <>
+            {isLoading && (
+                <Alert key="danger" variant="danger">
+                    Data is Loading ....
+                </Alert>
+            )}
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -27,28 +32,22 @@ const Home = () => {
                         <th>Actions</th>
                     </tr>
                 </thead>
-                {isLoading ? (
-                    <Alert key="danger" variant="danger">
-                        Data is Loading ....
-                    </Alert>
-                ) : (
-                    <tbody>
-                        {user &&
-                            user.map((el) => {
-                                const { email, name, id } = el;
-                                return (
-                                    <tr key={id}>
-                                        <td>{id}</td>
-                                        <td>{name}</td>
-                                        <td>{email}</td>
-                                        <td>Buttons</td>
-                                    </tr>
-                                );
-                            })}
-                    </tbody>
-                )}
+
+                <tbody>
+                    {user.map((el) => {
+                        const { email, name, id } = el;
+                        return (
+                            <tr key={id}>
+                                <td>{id}</td>
+                                <td>{name}</td>
+                                <td>{email}</td>
+                                <td>Buttons</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
             </Table>
-        </div>
+        </>
     );
 };
 
