@@ -7,7 +7,7 @@ const Navbar = () => {
             <nav>
                 <ul className="flex justify-center items-center text-3xl font-bold gap-10 ">
                     <NavLink to="/">Home</NavLink>
-                    <NavLink to="/about">About</NavLink>
+                    <NavLink to="/create">Create</NavLink>
                     <NavLink to="/contact-us">ContactUs</NavLink>
                 </ul>
             </nav>
