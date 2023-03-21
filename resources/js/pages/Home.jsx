@@ -26,12 +26,18 @@ const Home = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Ujjal</td>
-                        <td>ujjal@gmail.com</td>
-                        <td>Buttons</td>
-                    </tr>
+                    {user &&
+                        user.map((el) => {
+                            const { email, name, id } = el;
+                            return (
+                                <tr key={id}>
+                                    <td>{id}</td>
+                                    <td>{name}</td>
+                                    <td>{email}</td>
+                                    <td>Buttons</td>
+                                </tr>
+                            );
+                        })}
                 </tbody>
             </Table>
         </div>
