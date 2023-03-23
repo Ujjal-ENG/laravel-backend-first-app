@@ -44,7 +44,7 @@ const Home = () => {
                                 <td>{email}</td>
                                 <td>
                                     <Link to="/edit" state={el}>
-                                        edit
+                                        Edit
                                     </Link>
                                 </td>
                             </tr>
